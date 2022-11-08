@@ -41,10 +41,16 @@ const namesDataset = {
     check() {
       if (!lastNames) throw new Error('Last names data not loaded. Pls init last names.');
     },
+    search(name = '') {
+      return lastNames[name];
+    },
   },
   firstNames: {
     check() {
       if (!firstNames) throw new Error('First names data not loaded. Pls init first names.');
+    },
+    search(name = '') {
+      return firstNames[name];
     },
   },
 };
