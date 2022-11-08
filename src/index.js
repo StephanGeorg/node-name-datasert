@@ -1,3 +1,4 @@
+import path from 'path';
 import StreamZip from 'node-stream-zip';
 
 let lastNames;
@@ -5,8 +6,11 @@ let firstNames;
 
 const namesDataset = {
   async load(filePath = '', internalPath = '') {
+    const curPath = path.resolve(__dirname);
+    const file = path.resolve(curPath, filePath);
+    console.log(file);
     const zip = new StreamZip({
-      file: filePath,
+      file,
       storeEntries: true,
     });
 
@@ -24,14 +28,14 @@ const namesDataset = {
   /**
    * Initialize last names data
    */
-  async initLastName() {
-    lastNames = await this.load('./data/last_names.zip', 'last_names.json');
+  async initLastNames() {
+    lastNames = await this.load('../data/last_names.zip', 'last_names.json');
   },
   /**
    * Initialize first names data
    */
   async initFirstNames() {
-    firstNames = await this.load('./data/first_names.zip', 'first_names.json');
+    firstNames = await this.load('../data/first_names.zip', 'first_names.json');
   },
   lastNames: {
     check() {
