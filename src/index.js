@@ -30,12 +30,14 @@ const namesDataset = {
    */
   async initLastNames() {
     lastNames = await this.load('../data/last_names.zip', 'last_names.json');
+    console.log(lastNames.smith);
   },
   /**
    * Initialize first names data
    */
   async initFirstNames() {
     firstNames = await this.load('../data/first_names.zip', 'first_names.json');
+    console.log(firstNames.joe);
   },
   lastNames: {
     check() {
@@ -56,3 +58,5 @@ const namesDataset = {
 };
 
 export default namesDataset;
+
+

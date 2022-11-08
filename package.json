@@ -16,7 +16,7 @@
   },
   "keywords": [],
   "dependencies": {
-    "@babel/runtime": "^7.18.9",
+    "@babel/runtime": "^7.19.3",
     "node-stream-zip": "^1.15.0"
   },
   "devDependencies": {
